@@ -1,33 +1,17 @@
 %{
 #include <stdio.h>
+#include "y.tab.h"
 %}
 
 %%
-[a-zA-Z_]*		{printf("word");}
-[a-zA-Z_/\.-]+  	{printf("filepath");}
-\"				{printf("quotes");}
-\{				{printf("leftBrace");}
-\}				{printf("rightBrace");}
-;				{printf("semicolon");}
-[\t\n]			{}
+[0-9]+			return NUMBER;
+heat			return TOKHEAT;
+on|off			return STATE;
+temperature		return TOKTEMPERATURE;
+target			return TOKTARGET;
+[\n]|[\w]+		{}
+
 
 %%
 
 
-int main()
-{
-	FILE *myFile=fopen("example.txt","r");
-	if (!myFile)
-		{
-			printf("error");
-			return -2;
-		}
-
-	else
-	{
-		yyin=myFile;
-	}
-
-	yylex();
-	return 1;
-}
