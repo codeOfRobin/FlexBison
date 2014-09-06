@@ -26,22 +26,11 @@ commands: /* empty */
         ;
 
 command:
-        heat_switch
-        |
-        target_set
+        zone_set
         ;
-
-heat_switch:
-        TOKHEAT STATE
+zone_set:
+        ZONETOK quotedname zonecontent
         {
-                printf("\tHeat turned on or off\n");
+                printf("zone set for zone %s \n",$2 );
         }
-        ;
-
-target_set:
-        TOKTARGET TOKTEMPERATURE NUMBER
-        {
-                printf("\tTemperature set\n");
-        }
-        ;
  %%

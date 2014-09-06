@@ -421,7 +421,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    24,    24,    25,    29,    31,    35,    42
+       0,    24,    24,    25,    29,    31,    35,    45
 };
 #endif
 
@@ -1324,20 +1324,23 @@ yyreduce:
         case 6:
 #line 36 "example.y"
     {
-                printf("\tHeat turned on or off\n");
+                if((yyvsp[(2) - (2)]))
+                        printf("Turned on");
+                else
+                        printf("turned off\n");
         }
     break;
 
   case 7:
-#line 43 "example.y"
+#line 46 "example.y"
     {
-                printf("\tTemperature set\n");
+                printf("\tTemperature set to %d\n",(yyvsp[(3) - (3)]));
         }
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1341 "y.tab.c"
+#line 1344 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1551,5 +1554,5 @@ yyreturn:
 }
 
 
-#line 47 "example.y"
+#line 50 "example.y"
 
