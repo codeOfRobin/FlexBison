@@ -39,19 +39,25 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     NUMBER = 258,
-     TOKHEAT = 259,
-     STATE = 260,
-     TOKTARGET = 261,
-     TOKTEMPERATURE = 262
+     ZONETOK = 258,
+     FILETOK = 259,
+     EBRACE = 260,
+     OBRACE = 261,
+     SEMICOLON = 262,
+     FILENAME = 263,
+     WORD = 264,
+     QUOTE = 265
    };
 #endif
 /* Tokens.  */
-#define NUMBER 258
-#define TOKHEAT 259
-#define STATE 260
-#define TOKTARGET 261
-#define TOKTEMPERATURE 262
+#define ZONETOK 258
+#define FILETOK 259
+#define EBRACE 260
+#define OBRACE 261
+#define SEMICOLON 262
+#define FILENAME 263
+#define WORD 264
+#define QUOTE 265
 
 
 
